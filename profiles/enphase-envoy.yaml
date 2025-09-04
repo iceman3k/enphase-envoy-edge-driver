@@ -1,0 +1,66 @@
+name: enphase-envoy
+components:
+  - id: main
+    capabilities:
+      - id: powerMeter
+        version: 1
+      - id: energyMeter
+        version: 1
+      - id: refresh
+        version: 1
+      - id: healthCheck
+        version: 1
+    categories:
+      - name: Sensor
+preferences:
+  - preferenceId: ipAddr
+    title: IP Address
+    description: Local IP of the Envoy
+    required: true
+    preferenceType: string
+    definition:
+      minimum: 7
+      maximum: 15
+      stringType: text
+  - preferenceId: tcpPort
+    title: TCP Port
+    description: Port (usually 80)
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 1
+      maximum: 65535
+      default: 80
+  - preferenceId: numInverters
+    title: Number of Inverters/Panels
+    description: Total number of inverters
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 1
+      default: 1
+  - preferenceId: inverterSize
+    title: Inverter Size (W)
+    description: Rated max power per inverter (e.g., 225 for M215)
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 1
+      default: 225
+  - preferenceId: panelSize
+    title: Panel Size (W)
+    description: Rated max power per panel (may differ from inverter)
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 1
+      default: 250
+  - preferenceId: pollingInterval
+    title: Polling Interval (min)
+    description: How often to poll (2-59 min)
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 2
+      maximum: 59
+      default: 5

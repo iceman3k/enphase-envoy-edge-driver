@@ -1,0 +1,6 @@
+name: enphase-envoy-edge
+packageKey: enphase-envoy
+permissions:
+  lan: {}
+description: Edge driver for Enphase Envoy local integration
+vendorSupportInformation: Based on https://github.com/ahndee/Envoy-ST
